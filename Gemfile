@@ -6,4 +6,5 @@ group :test do
   gem 'nokogiri'
   gem 'rackup'
   gem 'puma'
+  gem 'sinatra'
 end
