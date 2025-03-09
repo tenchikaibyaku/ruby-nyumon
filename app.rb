@@ -58,3 +58,16 @@ put '/todos/:id' do
   # `expect(updated_todo[0])` に対応
   redirect to('/todos')
 end
+
+# TODOの削除処理 (DELETE /todos/:id)
+delete '/todos/:id' do
+  db = TodoDB.connection
+
+  # 削除クエリ実行
+  db.execute('DELETE FROM todos WHERE id = ?', [params[:id].to_i])
+
+  # デバッグ出力
+  puts "Deleted TODO ID: #{params[:id].to_i}"
+
+  redirect to('/todos')  # 削除後に一覧画面へリダイレクト
+end

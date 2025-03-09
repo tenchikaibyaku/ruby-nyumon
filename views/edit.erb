@@ -6,4 +6,10 @@
   <input type="submit" value="更新">
 </form>
 
+<!-- 削除ボタン追加 -->
+<form action="/todos/<%= @todo[0] %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="削除">
+</form>
+
 <a href="/todos">戻る</a>

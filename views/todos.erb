@@ -13,6 +13,10 @@
       <% @todos.each do |todo| %>
         <li>
           <a href="/todos/<%= todo[0] %>/edit"><%= todo[1] %></a>
+          <form action="/todos/<%= todo[0] %>" method="POST" style="display:inline;">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="削除">
+          </form>
         </li>
       <% end %>
     </ul>
