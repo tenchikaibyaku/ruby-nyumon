@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODOリスト</title>
 </head>
-  <body>
+<body>
     <h1>TODOリスト</h1>
 
     <!-- TODO一覧の表示 -->
     <ul>
       <% @todos.each do |todo| %>
-      <li><%= todo[0] %></li>
+      <li>
+        <a href="/todos/<%= todo[0] %>/edit"><%= todo[1] %></a>
+      </li>
       <% end %>
     </ul>
 
@@ -20,5 +22,5 @@
       <input type="text" name="title" placeholder="新しいTODOを入力" required>
       <input type="submit" value="追加">
     </form>
-  </body>
+</body>
 </html>
